@@ -2,7 +2,7 @@ Summary:	GTK+ interface plugin for licq
 Summary(pl):	Wtyczka dla licq dostarczaj±ca interfejs GTK+
 Name:		licq-gtk
 Version:	0.39
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
@@ -46,11 +46,11 @@ autoheader;autoconf;automake;
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT/%{_applnkdir}/Network
+install -d $RPM_BUILD_ROOT/%{_applnkdir}/Network/Communications
 
 %{__make} install DESTDIR="$RPM_BUILD_ROOT"
 
-install %{SOURCE1} $RPM_BUILD_ROOT/%{_applnkdir}/Network
+install %{SOURCE1} $RPM_BUILD_ROOT/%{_applnkdir}/Network/Communications
 
 gzip -9nf AUTHORS BUGS NEWS README ChangeLog 
 
@@ -62,4 +62,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root)%{_libdir}/licq/*
 %{_datadir}/licq/gtk-gui
-%{_applnkdir}/Network/*
+%{_applnkdir}/Network/Communications/*
