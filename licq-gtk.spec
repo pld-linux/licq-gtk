@@ -26,10 +26,7 @@ BuildRequires:	sed
 Requires:	licq >= 1.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _prefix         /usr/X11R6
-%define		_old_includedir	/usr/include
-%define         _sysconfdir     /etc/X11/GNOME
-%define         _mandir         %{_prefix}/man              
+%define         _x11_datadir	/usr/X11R6/share/data
 
 %description
 GTK+ interface plugin for licq.
@@ -48,8 +45,7 @@ automake -a -c
 autoconf
 %configure \
 	%{?no_gnome:--without-gnome} \
-	%{!?no_gnome:--with-gnome} \
-	--with-licq-includes=%{_old_includedir}/licq
+	%{!?no_gnome:--with-gnome}
 
 %{__make}
 
@@ -58,7 +54,9 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT/%{_applnkdir}/Network/Communications
 
-%{__make} install DESTDIR="$RPM_BUILD_ROOT"
+%{__make} install \
+	DESTDIR="$RPM_BUILD_ROOT" \
+	gtklicq_helpdir=%{_x11_datadir}/gnome/help/gtk+licq/C
 
 install %{SOURCE1} $RPM_BUILD_ROOT/%{_applnkdir}/Network/Communications
 
@@ -74,5 +72,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root)%{_libdir}/licq/*
 %{_datadir}/licq/gtk-gui
-%{_datadir}/gnome/help/gtk+licq
+%{_x11_datadir}/gnome/help/gtk+licq
 %{_applnkdir}/Network/Communications/*
