@@ -60,7 +60,8 @@ install -d $RPM_BUILD_ROOT/%{_applnkdir}/Network/Communications
 
 install %{SOURCE1} $RPM_BUILD_ROOT/%{_applnkdir}/Network/Communications
 
-%find_lang %{name} --with-gnome --all-name
+# gtk+licq is proper here! Don't add --all-name
+%find_lang gtk+licq %{name}.lang  --with-gnome
 
 gzip -9nf AUTHORS NEWS README ChangeLog 
 
@@ -72,5 +73,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root)%{_libdir}/licq/*
 %{_datadir}/licq/gtk-gui
-%{_x11_datadir}/gnome/help/gtk+licq
 %{_applnkdir}/Network/Communications/*
