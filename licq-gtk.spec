@@ -9,6 +9,7 @@ Source0:	http://gtk.licq.org/download/gtk+licq-%{version}.tar.gz
 # Source0-md5:	be09ec38ef2c5f7b078ff31f81371a38
 Source1:	%{name}_gui.desktop
 URL:		http://gtk.licq.org/
+BuildRequires:	aspell-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 %{!?_without_gnome:BuildRequires:	db3-devel}
@@ -21,7 +22,6 @@ BuildRequires:	libltdl-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	perl
-BuildRequires:	aspell-devel
 Requires:	licq >= 1.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -60,7 +60,7 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/Communications
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Communications
 
 # gtk+licq is proper here! Don't add --all-name
-%find_lang gtk+licq %{name}.lang  --with-gnome
+%find_lang gtk+licq %{name}.lang --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -68,6 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README ChangeLog
-%attr(755,root,root)%{_libdir}/licq/*
+%attr(755,root,root) %{_libdir}/licq/*
 %{_datadir}/licq/gtk-gui
 %{_applnkdir}/Network/Communications/*
