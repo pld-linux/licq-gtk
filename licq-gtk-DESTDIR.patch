@@ -1,0 +1,16 @@
+diff -urN gtk+licq-0.39.orig/Makefile.am gtk+licq-0.39/Makefile.am
+--- gtk+licq-0.39.orig/Makefile.am	Wed Jun 28 09:14:59 2000
++++ gtk+licq-0.39/Makefile.am	Wed Sep 27 12:22:58 2000
+@@ -6,10 +6,10 @@
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
+ 	if test -d $(srcdir)/pixmaps; then \
+-	  $(mkinstalldirs) $(GTKGUI_DIR)/pixmaps; \
++	  $(mkinstalldirs) $(DESTDIR)$(GTKGUI_DIR)/pixmaps; \
+ 	  for pixmap in $(srcdir)/pixmaps/*; do \
+ 		if test -f $$pixmap; then \
+-			$(INSTALL_DATA) $$pixmap $(GTKGUI_DIR)/pixmaps; \
++			$(INSTALL_DATA) $$pixmap $(DESTDIR)$(GTKGUI_DIR)/pixmaps; \
+ 		fi \
+ 	  done \
+ 	fi
