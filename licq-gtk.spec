@@ -15,6 +15,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	licq-devel
 BuildRequires:	gettext-devel
+BuildRequires:	glibc-db2-devel
 Requires:	licq
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
