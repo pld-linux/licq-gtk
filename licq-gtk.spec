@@ -11,10 +11,10 @@ Source0:	http://gtk.licq.org/download/gtk+licq-%{version}.tar.gz
 Source1:	licq-gtk_gui.desktop
 Patch0:		licq-gtk-make.patch
 URL:		http://gtk.licq.org/
-%{!?no_gnome:BuildRequires:	esound-devel}
-%{!?no_gnome:BuildRequires:	db3-devel}
+%{!?_without_gnome:BuildRequires:	esound-devel}
+%{!?_without_gnome:BuildRequires:	db3-devel}
 BuildRequires:	gettext-devel
-%{!?no_gnome:BuildRequires:	gnome-core-devel}
+%{!?_without_gnome:BuildRequires:	gnome-core-devel}
 BuildRequires:	gtk+-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	licq-devel >= 1.0.2
@@ -46,8 +46,8 @@ aclocal
 autoconf
 automake -a -c
 %configure \
-	%{?no_gnome:--without-gnome} \
-	%{!?no_gnome:--with-gnome}
+	%{?_without_gnome:--disable-gnome} \
+	%{!?_without_gnome:--enable-gnome}
 
 %{__make}
 
