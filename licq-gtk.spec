@@ -36,10 +36,10 @@ Wtyczka dla licq dostarczaj±ca interfejs GTK+.
 %setup -n gtk+licq-%{version} -q
 
 %build
-rm missing
+rm -f missing
 %{__gettextize}
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
