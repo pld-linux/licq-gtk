@@ -21,7 +21,7 @@ BuildRequires:	libltdl-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	perl
-BuildRequires:	pspell-devel
+BuildRequires:	aspell-devel
 Requires:	licq >= 1.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
