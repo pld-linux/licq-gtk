@@ -5,8 +5,6 @@ Version:	0.51
 Release:	1
 License:	GPL
 Group:		Applications/Communications
-Group(de):	Applikationen/Kommunikation
-Group(pl):	Aplikacje/Komunikacja
 Source0:	http://gtk.licq.org/download/gtk+licq-%{version}.tar.gz
 Source1:	licq-gtk_gui.desktop
 URL:		http://gtk.licq.org/
