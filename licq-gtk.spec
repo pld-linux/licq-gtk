@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://gtk.licq.org/download/gtk+licq-%{version}.tar.gz
-Source1:	licq-gtk_gui.desktop
+Source1:	%{name}_gui.desktop
 URL:		http://gtk.licq.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -62,7 +62,7 @@ install %{SOURCE1} $RPM_BUILD_ROOT/%{_applnkdir}/Network/Communications
 # gtk+licq is proper here! Don't add --all-name
 %find_lang gtk+licq %{name}.lang  --with-gnome
 
-gzip -9nf AUTHORS NEWS README ChangeLog 
+gzip -9nf AUTHORS NEWS README ChangeLog
 
 %clean
 rm -rf $RPM_BUILD_ROOT
