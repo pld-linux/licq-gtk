@@ -41,7 +41,7 @@ gettextize --copy --force
 libtoolize --copy --force
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure \
 	%{?_without_gnome:--disable-gnome} \
 	%{!?_without_gnome:--enable-gnome}
