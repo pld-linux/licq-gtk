@@ -5,3 +5,4 @@ Comment[pl]=Klon ICQ pod Unixa/GTK+
 Exec=/usr/bin/licq -p gtk_gui
 Terminal=0
 Type=Application
+# vi: encoding=utf-8
