@@ -9,34 +9,29 @@ Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
 Source0:	http://gtk.licq.org/download/gtk+licq-%{version}.tar.gz
 Source1:	licq-gtk_gui.desktop
-#Patch0:		%{name}-_PC_NAME_MAX.patch
-#Patch1:		%{name}-DESTDIR.patch
 URL:		http://gtk.licq.org/
-BuildRequires:	libstdc++-devel
-%{!?no_gnome:BuildRequires:	gnome-libs-devel}
 %{!?no_gnome:BuildRequires:	esound-devel}
 %{!?no_gnome:BuildRequires:	db2-devel}
-BuildRequires:	gtk+-devel
-BuildRequires:	licq-devel >= 1.0.2
 BuildRequires:	gettext-devel
+%{!?no_gnome:BuildRequires:	gnome-core-devel}
+BuildRequires:	gtk+-devel
+BuildRequires:	libstdc++-devel
+BuildRequires:	licq-devel >= 1.0.2
+BuildRequires:	pspell-devel
 Requires:	licq
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GTK+ interface plugin for licq
+GTK+ interface plugin for licq.
 
 %description -l pl
-Wtyczka dla licq dostarczaj±ca interfejs GTK+
+Wtyczka dla licq dostarczaj±ca interfejs GTK+.
 
 %prep
 %setup -n gtk+licq-%{version} -q
-#%patch0 -p1
-#%patch1 -p1
 
 %build
 gettextize --copy --force
-#autoheader;autoconf;automake; 
-
 %configure \
 	%{?no_gnome:--without-gnome} \
 	%{!?no_gnome:--with-gnome}
