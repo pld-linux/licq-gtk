@@ -40,8 +40,8 @@ rm missing
 gettextize --copy --force
 libtoolize --copy --force
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	%{?_without_gnome:--disable-gnome} \
 	%{!?_without_gnome:--enable-gnome}
