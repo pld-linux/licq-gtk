@@ -3,10 +3,10 @@ Summary(pl):	Wtyczka dla licq dostarczaj±ca interfejs GTK+
 Name:		licq-gtk
 Version:	0.39
 Release:	2
+License:	GPL
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
-License:	GPL
 Source0:	http://gtk.licq.org/download/gtk+licq-%{version}.tar.gz
 Patch0:		%{name}-_PC_NAME_MAX.patch
 Patch1:		%{name}-DESTDIR.patch
@@ -54,7 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc *.gz
 %attr(755,root,root)%{_libdir}/licq/*
 %{_datadir}/licq/gtk-gui
-
-%doc *.gz
