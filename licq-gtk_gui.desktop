@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Licq (GTK+ GUI)
+Comment=Unix/GTK+ ICQ clone
+Comment[pl]=Klon ICQ pod Unixa/GTK+
+Exec=/usr/bin/licq -p gtk_gui
+Terminal=0
+Type=Application
