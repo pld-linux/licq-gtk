@@ -1,0 +1,12 @@
+diff -urN gtk+licq-0.50.1.org/src/Makefile.am gtk+licq-0.50.1/src/Makefile.am
+--- gtk+licq-0.50.1.org/src/Makefile.am	Mon Mar  5 20:05:06 2001
++++ gtk+licq-0.50.1/src/Makefile.am	Mon Mar  5 20:21:21 2001
+@@ -30,7 +30,7 @@
+ licq_gnome_gui_la_SOURCES = $(sources)
+ licq_gnome_gui_la_LIBADD = $(GNOME_LIBS) $(XSS_LIBS) $(PSPELL_LIBS)
+ 
+-INCLUDES = -I$(LICQ_INCLUDES) -I$(LICQ_SRC)/src/inc $(PSPELL_FLAGS) $(GNOME_CFLAGS) -D_REENTRANT -DHAVE_CONFIG_H -D_POSIX_PTHREAD_SEMANTICS $(EXTRAFLAGS)
++INCLUDES = -I$(LICQ_INCLUDES) -I$(LICQ_SRC)/src/inc $(PSPELL_FLAGS) $(GNOME_CFLAGS) $(GTK_CFLAGS) -D_REENTRANT -DHAVE_CONFIG_H -D_POSIX_PTHREAD_SEMANTICS $(EXTRAFLAGS)
+ else
+ licq_gtk_guidir = $(prefix)/lib/licq
+ licq_gtk_gui_LTLIBRARIES = licq_gtk_gui.la
