@@ -10,19 +10,19 @@ Group(pl):	Aplikacje/Komunikacja
 Source0:	http://gtk.licq.org/download/gtk+licq-%{version}.tar.gz
 Source1:	licq-gtk_gui.desktop
 URL:		http://gtk.licq.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
 %{!?_without_gnome:BuildRequires:	esound-devel}
 %{!?_without_gnome:BuildRequires:	db3-devel}
 BuildRequires:	gettext-devel
 %{!?_without_gnome:BuildRequires:	gnome-core-devel}
 BuildRequires:	gtk+-devel
-BuildRequires:	libstdc++-devel
 BuildRequires:	licq-devel >= 1.0.2
-BuildRequires:	pspell-devel
-BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	libltdl-devel
+BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	perl
-BuildRequires:	libltdl-devel
+BuildRequires:	pspell-devel
 Requires:	licq >= 1.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
