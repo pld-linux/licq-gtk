@@ -51,14 +51,13 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT/%{_applnkdir}/Network/Communications
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/Communications
 
 %{__make} install \
 	DESTDIR="$RPM_BUILD_ROOT" \
 	gtklicq_helpdir=%{_xdatadir}/gnome/help/gtk+licq/C
 
-install %{SOURCE1} $RPM_BUILD_ROOT/%{_applnkdir}/Network/Communications
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Communications
 
 # gtk+licq is proper here! Don't add --all-name
 %find_lang gtk+licq %{name}.lang  --with-gnome
