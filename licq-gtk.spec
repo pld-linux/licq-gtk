@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://gtk.licq.org/download/gtk+licq-%{version}.tar.gz
+# Source0-md5:	be09ec38ef2c5f7b078ff31f81371a38
 Source1:	%{name}_gui.desktop
 URL:		http://gtk.licq.org/
 BuildRequires:	autoconf
