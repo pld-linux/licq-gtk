@@ -38,7 +38,7 @@ Wtyczka dla licq dostarczaj±ca interfejs GTK+.
 %build
 rm missing
 gettextize --copy --force
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 %{__autoconf}
 %{__automake}
