@@ -2,7 +2,7 @@ Summary:	GTK+ interface plugin for licq
 Summary(pl):	Wtyczka dla licq dostarczaj±ca interfejs GTK+
 Name:		licq-gtk
 Version:	0.39
-Release:	1
+Release:	2
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
@@ -12,10 +12,12 @@ Patch0:		%{name}-_PC_NAME_MAX.patch
 Patch1:		%{name}-DESTDIR.patch
 URL:		http://gtk.licq.org/
 BuildRequires:	libstdc++-devel
+%{!?no_gnome:BuildRequires:	gnome-libs-devel}
+%{!?no_gnome:BuildRequires:	esound-devel}
+%{!?no_gnome:BuildRequires:	db2-devel}
 BuildRequires:	gtk+-devel
 BuildRequires:	licq-devel
 BuildRequires:	gettext-devel
-BuildRequires:	glibc-db2-devel
 Requires:	licq
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,7 +36,9 @@ Wtyczka dla licq dostarczaj±ca interfejs GTK+
 gettextize --copy --force
 autoheader;autoconf;automake; 
 
-%configure
+%configure \
+	%{?no_gnome:--without-gnome} \
+	%{!?no_gnome:--with-gnome}
 
 %{__make}
 
