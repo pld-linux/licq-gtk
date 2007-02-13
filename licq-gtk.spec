@@ -1,5 +1,5 @@
 Summary:	GTK+ interface plugin for licq
-Summary(pl.UTF-8):   Wtyczka dla licq dostarczająca interfejs GTK+
+Summary(pl.UTF-8):	Wtyczka dla licq dostarczająca interfejs GTK+
 Name:		licq-gtk
 Version:	0.51
 Release:	2
