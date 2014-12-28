@@ -14,7 +14,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 %{!?_without_gnome:BuildRequires:	db3-devel}
 %{!?_without_gnome:BuildRequires:	esound-devel}
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 %{!?_without_gnome:BuildRequires:	gnome-core-devel}
 BuildRequires:	gtk+-devel
 BuildRequires:	licq-devel >= 1.0.2
